@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<style>
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+input[type=comment] {
+    width: 100%;
+    height: 200px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+      dsavertical-align: top;
+    
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+div {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+textarea {
+    width: 100%;
+    height: 250px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    font-size: 16px;
+    resize: none;
+</style>
+<body>
+<div>
+  <form action="/action_page.php">
+    <label for="coursename">課程名稱:</label>
+    <input type="text" id="coursename" name="coursename" placeholder="課程名稱">
+
+    <label for="teachername">老師名稱:</label>
+    <input type="text" id="teachername" name="teachername" placeholder="老師名稱">
+
+    <label for="department">科系:</label>
+    <select id="department" name="department">
+      <option value="computersicence">資訊工程學系</option>
+      <option value="usa">電機資訊系</option>
+      <option value="usa">通訊學系</option>
+      <option value="usa">法律學系</option>
+      <option value="usa">企業管理學系</option>
+      <option value="usa">金融與合作經營學系</option>
+      <option value="usa">休閒運動管理學系</option>
+      <option value="usa">會計系</option>
+      <option value="usa">統計系</option>
+      <option value="usa">公共事務暨行政學系</option>
+      <option value="usa">不動產與城鄉環境學系</option>
+      <option value="usa">中文學系</option>
+      <option value="usa">歷史學系</option>
+      <option value="usa">外文學系</option>
+    </select>
+    <label for="comment">課程評論(限兩百個字):</label>
+  <form>
+  <textarea placeholder="文字敘述(限兩百個字)"></textarea>
+	</form>
+  
+    <input type="submit" value="Submit">
+  </form>
+</div>
+
+</body>
+</html>

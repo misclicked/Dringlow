@@ -1,0 +1,524 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <title>聊天 - DringLow</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" charset="utf-8"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" charset="utf-8"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.5/validator.min.js" charset="utf-8"></script>
+    <style>
+        .title {
+            margin: 0;
+            background: lightgrey;
+            // color: red;
+            border: 0;
+            //text-align: center;
+        }
+        
+        li:last-child {
+            border-right: none;
+        }
+        
+        .Horizontalitem {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 10px 15px;
+            text-decoration: none;
+        }
+        
+        .Horizontalitem:hover:not(.active) {
+            background-color: green;
+        }
+        
+        .Horizontalbar {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            overflow: hidden;
+        }
+        
+        .Horizontalborder {
+            float: left;
+            border-right: 1px solid #bbb;
+        }
+        
+        #login {
+            display: none;
+        }
+        
+        .login,
+        .logout {
+            position: absolute;
+            top: -3px;
+            right: 0;
+        }
+        
+        .page-header {
+            position: relative;
+        }
+        
+        .reviews {
+            color: #555;
+            font-weight: bold;
+            margin: 10px auto 20px;
+        }
+        
+        .notes {
+            color: #999;
+            font-size: 12px;
+        }
+        
+        .media .media-object {
+            max-width: 120px;
+        }
+        
+        .media-body {
+            position: relative;
+        }
+        
+        .media-date {
+            position: absolute;
+            right: 25px;
+            top: 25px;
+        }
+        
+        .media-date li {
+            padding: 0;
+        }
+        
+        .media-date li:first-child:before {
+            content: '';
+        }
+        
+        .media-date li:before {
+            content: '.';
+            margin-left: -2px;
+            margin-right: 2px;
+        }
+        
+        .media-comment {
+            margin-bottom: 20px;
+        }
+        
+        .media-replied {
+            margin: 0 0 20px 50px;
+        }
+        
+        .media-replied .media-heading {
+            padding-left: 6px;
+        }
+        
+        .btn-circle {
+            font-weight: bold;
+            font-size: 12px;
+            padding: 6px 15px;
+            border-radius: 20px;
+        }
+        
+        .btn-circle span {
+            padding-right: 6px;
+        }
+        
+        .embed-responsive {
+            margin-bottom: 20px;
+        }
+        
+        .tab-content {
+            padding: 50px 15px;
+            border: 1px solid #ddd;
+            border-top: 0;
+            border-bottom-right-radius: 4px;
+            border-bottom-left-radius: 4px;
+        }
+        
+        .custom-input-file {
+            overflow: hidden;
+            position: relative;
+            width: 120px;
+            height: 120px;
+            background: #eee url('https://s3.amazonaws.com/uifaces/faces/twitter/walterstephanie/128.jpg');
+            background-size: 120px;
+            border-radius: 120px;
+        }
+        
+        input[type="file"] {
+            z-index: 999;
+            line-height: 0;
+            font-size: 0;
+            position: absolute;
+            opacity: 0;
+            filter: alpha(opacity=0);
+            -ms-filter: "alpha(opacity=0)";
+            margin: 0;
+            padding: 0;
+            left: 0;
+        }
+        
+        .uploadPhoto {
+            position: absolute;
+            top: 25%;
+            left: 25%;
+            display: none;
+            width: 50%;
+            height: 50%;
+            color: #fff;
+            text-align: center;
+            line-height: 60px;
+            text-transform: uppercase;
+            background-color: rgba(0, 0, 0, .3);
+            border-radius: 50px;
+            cursor: pointer;
+        }
+        
+        .custom-input-file:hover .uploadPhoto {
+            display: block;
+        }
+        
+        .form-body {
+            background: #fff;
+            padding: 20px;
+        }
+        
+        .login-form {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-top: 3px solid#3e4043;
+        }
+        
+        .innter-form {
+            padding-top: 20px;
+        }
+        
+        .final-login li {
+            width: 50%;
+        }
+        
+        .nav-tabs {
+            border-bottom: none !important;
+        }
+        
+        .final-login>li {
+            color: #222 !important;
+        }
+        
+        .final-login>li.active>a,
+        .final-login>li.active>a:hover,
+        .final-login>li.active>a:focus {
+            color: #fff;
+            background-color: #d14d42;
+            border: none !important;
+            border-bottom-color: transparent;
+            border-radius: none !important;
+        }
+        
+        .final-login>li>a {
+            margin-right: 2px;
+            line-height: 1.428571429;
+            border: none !important;
+            border-radius: none !important;
+            text-transform: uppercase;
+            font-size: 16px;
+        }
+        
+        .social-login {
+            text-align: center;
+            font-size: 12px;
+        }
+        
+        .social-login p {
+            margin: 15px 0;
+        }
+        
+        .social-login ul {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
+        
+        .social-login ul li {
+            width: 33%;
+            float: left;
+            clear: fix;
+        }
+        
+        .social-login ul li a {
+            font-size: 13px;
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 0;
+            display: block;
+        }
+        
+        .social-login ul li:nth-child(1) a {
+            background: #3b5998;
+        }
+        
+        .social-login ul li:nth-child(2) a {
+            background: #e74c3d;
+        }
+        
+        .social-login ul li:nth-child(3) a {
+            background: #3698d9;
+        }
+        
+        .sa-innate-form input[type=text],
+        input[type=password],
+        input[type=file],
+        textarea,
+        select,
+        email {
+            font-size: 13px;
+            padding: 10px;
+            border: 1px solid#ccc;
+            outline: none;
+            width: 100%;
+            margin: 8px 0;
+        }
+        
+        .sa-innate-form input[type=submit] {
+            border: 1px solid#e64b3b;
+            background: #e64b3b;
+            color: #fff;
+            padding: 10px 25px;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+        
+        .sa-innate-form input[type=submit]:hover {
+            border: 1px solid#db3b2b;
+            background: #db3b2b;
+            color: #fff;
+        }
+        
+        .sa-innate-form button {
+            border: 1px solid#e64b3b;
+            background: #e64b3b;
+            color: #fff;
+            padding: 10px 25px;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+        
+        .sa-innate-form button:hover {
+            border: 1px solid#db3b2b;
+            background: #db3b2b;
+            color: #fff;
+        }
+        
+        .sa-innate-form p {
+            font-size: 13px;
+            padding-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="title">DringLow</h1>
+    <ul class="Horizontalbar">
+        <li class="Horizontalborder"><a class="Horizontalitem" href="home.html">Home</a></li>
+        <li class="Horizontalborder"><a class="Horizontalitem" href="course">課程評價</a></li>
+        <li class="Horizontalborder"><a class="Horizontalitem" href="book">二手書</a></li>
+        <li class="Horizontalborder"><a class="Horizontalitem" href="stuff">新舊物品</a></li>
+        <li class="Horizontalborder"><a class="active Horizontalitem" href="gossip">聊天</a></li>
+        <li style="float:right;border-left:1px solid #bbb"><a class="Horizontalitem" href="logout.do">Sign out</a> </li>
+        <li style="float:right;border-left:1px solid #bbb "><a class="Horizontalitem">Sign in</a> </li>
+    </ul>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-10 col-sm-offset-1" id="logout">
+                <div class="page-header">
+                    <h3 class="reviews">留言板</h3>
+
+                </div>
+                <div class="comment-tabs">
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li class="active"><a href="#comments-logout" role="tab" data-toggle="tab"><h4 class="reviews text-capitalize">留言數</h4></a></li>
+                        <li><a href="#add-comment" role="tab" data-toggle="tab"><h4 class="reviews text-capitalize">我要留言</h4></a></li>
+
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="comments-logout">
+                            <ul class="media-list">
+                                <li class="media">
+
+                                    <div class="media-body">
+                                        <div class="well well-lg">
+                                            <h4 class="media-heading text-uppercase reviews">Title </h4>
+                                            <p class="media-comment">
+						hehexd
+                                            </p>
+                                            <a class="btn btn-circle btn-primary"><span class="glyphicon  glyphicon-user"></span> Micro</a>
+                                            <a class="btn btn-info btn-circle text-uppercase pull-right" role="reply" id="1"><span class="glyphicon glyphicon-share-alt"></span> 回復</a>
+
+
+                                            <a class="btn btn-warning btn-circle text-uppercase" data-toggle="collapse" href="#reply1"><span class="glyphicon glyphicon-comment"></span> 1 評論</a>
+                                        </div>
+                                    </div>
+                                    <div class="collapse" id="reply1">
+                                        <ul class="media-list">
+                                            <li class="media media-replied">
+                                                <div class="media-body">
+                                                    <div class="well well-lg">
+                                                        <h4 class="media-heading text-uppercase reviews"><span class="glyphicon glyphicon-share-alt"></span> The Hipster</h4>
+                                                        <p class="media-comment">
+                                                            Nice job Maria.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="tab-pane" id="add-comment">
+                            <form method="post" data-toggle="validator" class="form-horizontal" id="commentForm" role="form" action="gossip/message/po">
+                                <div class="form-group">
+                                    <label for="addTitle" class="col-sm-2 control-label">標題</label>
+                                    <div class="col-sm-10">
+                                        <textarea class="form-control" data-minlength="1" maxlength="20" name="title" id="addTitle" rows="1" required></textarea>
+                                        <p id="passwordHelpBlock" class="form-text text-muted">
+                                            請輸入1~20字(不包含空格)
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="addComment" class="col-sm-2 control-label">內容</label>
+                                    <div class="col-sm-10">
+                                        <textarea class="form-control" data-minlength="10" maxlength="200" name="content" id="addComment" rows="5" required></textarea>
+                                        <p id="passwordHelpBlock" class="form-text text-muted">
+                                            請輸入10~200字(不包含空格)
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-offset-2 col-sm-10">
+                                        <button class="btn btn-success btn-circle text-uppercase" type="submit" id="submitComment"><span class="glyphicon glyphicon-send"></span>上傳評論</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="myModal" role="dialog">
+                            <div class="modal-dialog">
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <h4 class="modal-title" id="curtitle">回復</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form method="post" action="gossip/message/re" id="mySubForm" data-toggle="validator">
+
+                                            <label for="comment">想說的話：</label>
+                                            <textarea class="form-control" data-minlength="10" maxlength="120" name="comment" rows="5" id="comment" required></textarea>
+                                            <p id="passwordHelpBlock" class="form-text text-muted">
+                                                請輸入10~120字(不包含空格)
+                                            </p>
+                                            <br>
+                                            <input class="btn btn-info btn-lg  center-block" onClick="check()" style="width:100%" type="submit" value="Submit">
+                                            <input style="width:100%" type="hidden" name="id" value="-1">
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Modal end -->
+                        <!-- login Modal -->
+                        <div class="modal fade" id="loginModal" role="dialog">
+                            <div class="modal-dialog">
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <h4 class="modal-title" id="curtitle">登入</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="form-body" style="display:block">
+                                            <ul class="nav nav-tabs final-login">
+                                                <li class="active"><a data-toggle="tab" href="#sectionA">登入</a></li>
+                                                <li><a data-toggle="tab" href="#sectionB">註冊</a></li>
+                                            </ul>
+                                            <div class="tab-content">
+                                                <div id="sectionA" class="tab-pane fade in active">
+                                                    <div class="innter-form">
+                                                        <form class="sa-innate-form" method="post" id="loginform" data-toggle="validator" role="form" action="login.do">
+                                                            <div class="form-group">
+                                                                <label for="inputEmail" class="control-label">Email</label>
+                                                                <input type="email" name="email" class="form-control" id="inputEmail" placeholder="Email" required>
+                                                                <div class="help-block with-errors"></div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="inputPassword" class="control-label">密碼</label>
+                                                                <div class="form-group">
+                                                                    <input type="password" name="password" class="form-control" data-minlength="6" maxlength="16" id="inputPassword" placeholder="Password" required>
+                                                                    <div class="help-block"></div>
+                                                                </div>
+                                                            </div>
+                                                            <button type="submit">登入</button>
+                                                        </form>
+                                                    </div>
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                                <div id="sectionB" class="tab-pane fade">
+                                                    <div class="innter-form">
+                                                        <form class="sa-innate-form" method="post" id="signinform" data-toggle="validator" role="form" action="register.do">
+                                                            <div class="form-group">
+                                                                <label for="inputEmail2" class="control-label">Email</label>
+                                                                <input type="email" name="email" class="form-control" id="inputEmail2" placeholder="Email" required>
+                                                                <div class="help-block with-errors"></div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="inputPassword2" class="control-label">密碼</label>
+                                                                <div class="form-group">
+                                                                    <input type="password" name="password" class="form-control" data-minlength="6" maxlength="16" id="inputPassword2" placeholder="Password" required>
+                                                                    <div class="help-block">6~16字</div>
+                                                                </div>
+                                                                <label for="inputPasswordConfirm" class="control-label">請再次輸入密碼</label>
+                                                                <div class="form-group">
+                                                                    <input type="password" name="confirmedpassword" class="form-control" id="inputPasswordConfirm" maxlength="16" data-match="#inputPassword2" data-match-error="兩次輸入密碼不同" placeholder="Confirm" required>
+                                                                    <div class="help-block with-errors"></div>
+                                                                </div>
+                                                            </div>
+                                                            <button type="submit">註冊</button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- login Modal end -->
+                        <div class="page-header text-center">
+                            <h3 class="reviews"> DringLow </h3>
+                        </div>
+                    </div>
+</body>
+
+<script>
+    $(document).ready(function() {
+        $("a.Horizontalitem").click(function(event) {
+            var item = this;
+            if (item.textContent == 'Sign in')
+                $("#loginModal").modal();
+        });
+        $("a[role='reply']").click(function(event) {
+            $("#myModal").modal();
+            $("input[type='hidden']")[0].value = this.id;
+        });
+    });
+</script>
+
+</html>

@@ -1,0 +1,214 @@
+<head>下插入下列script:
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.5/validator.min.js" charset="utf-8"></script>
+
+		
+css 改:
+.active {
+	background-color: #4CAF50;
+}
+->
+.active.Horizontalitem {
+	background-color: #4CAF50;
+}
+		
+		
+css 加入:
+
+.form-body{
+    background:#fff;
+    padding:20px;
+}
+.login-form{
+    background:rgba(255,255,255,0.8);
+	padding:20px;
+	border-top:3px solid#3e4043;
+}
+.innter-form{
+	padding-top:20px;
+}
+.final-login li{
+	width:50%;
+}
+
+.nav-tabs {
+    border-bottom: none !important;
+}
+
+.nav-tabs>li{
+	color:#222 !important;
+}
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:hover, .nav-tabs>li.active>a:focus {
+    color: #fff;
+    background-color: #d14d42;
+    border: none !important;
+    border-bottom-color: transparent;
+	border-radius:none !important;
+}
+.nav-tabs>li>a {
+    margin-right: 2px;
+    line-height: 1.428571429;
+    border: none !important;
+    border-radius:none !important;
+	text-transform:uppercase;
+	font-size:16px;
+}
+
+.social-login{
+	text-align:center;
+	font-size:12px;
+}
+.social-login p{
+	margin:15px 0;
+}
+.social-login ul{
+	margin:0;
+	padding:0;
+	list-style-type:none;
+}
+.social-login ul li{
+	width:33%;
+	float:left;
+    clear:fix;
+}
+.social-login ul li a{
+	font-size:13px;
+	color:#fff;
+	text-decoration:none;
+	padding:10px 0;
+	display:block;
+}
+.social-login ul li:nth-child(1) a{
+	background:#3b5998;
+}
+.social-login ul li:nth-child(2) a{
+	background:#e74c3d;
+}
+.social-login ul li:nth-child(3) a{
+	background:#3698d9;
+}
+.sa-innate-form input[type=text], input[type=password], input[type=file], textarea, select, email{
+    font-size:13px;
+	padding:10px;
+	border:1px solid#ccc;
+	outline:none;
+	width:100%;
+	margin:8px 0;
+	
+}
+.sa-innate-form input[type=submit]{
+    border:1px solid#e64b3b;
+	background:#e64b3b;
+	color:#fff;
+	padding:10px 25px;
+	font-size:14px;
+	margin-top:5px;
+	}
+	.sa-innate-form input[type=submit]:hover{
+	border:1px solid#db3b2b;
+	background:#db3b2b;
+	color:#fff;
+	}
+	
+	.sa-innate-form button{
+	border:1px solid#e64b3b;
+	background:#e64b3b;
+	color:#fff;
+	padding:10px 25px;
+	font-size:14px;
+	margin-top:5px;
+	}
+	.sa-innate-form button:hover{
+	border:1px solid#db3b2b;
+	background:#db3b2b;
+	color:#fff;
+	}
+    .sa-innate-form p{
+        font-size:13px;
+        padding-top:10px;
+    }
+		
+		
+任何地方插入下列 modal:
+
+
+    	        <!-- login Modal -->
+      <div class="modal fade" id="loginModal" role="dialog">
+         <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+               <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h4 class="modal-title" id="curtitle">登入</h4>
+               </div>
+               <div class="modal-body">
+			<div class="form-body">
+    <ul class="nav nav-tabs final-login">
+        <li class="active"><a data-toggle="tab" href="#sectionA">登入</a></li>
+        <li><a data-toggle="tab" href="#sectionB">註冊</a></li>
+    </ul>
+    <div class="tab-content">
+        <div id="sectionA" class="tab-pane fade in active">
+        <div class="innter-form">
+            <form class="sa-innate-form" method="post" id="loginform" data-toggle="validator" role="form">
+			<div class="form-group">
+				<label for="inputEmail" class="control-label">Email</label>
+				<input type="email" class="form-control" id="inputEmail" placeholder="Email" required>
+				<div class="help-block with-errors"></div>
+			 </div>
+			 <div class="form-group">
+			<label for="inputPassword" class="control-label">密碼</label>
+			  <div class="form-group">
+				<input type="password" class="form-control" data-minlength="6"  maxlength="16" id="inputPassword" placeholder="Password" required>
+				<div class="help-block"></div>
+			  </div>
+			</div>
+            <button type="submit">登入</button>
+            </form>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <div id="sectionB" class="tab-pane fade">
+        <div class="innter-form">
+            <form class="sa-innate-form" method="post" id="signinform" data-toggle="validator" role="form">
+			<div class="form-group">
+				<label for="inputEmail2" class="control-label">Email</label>
+				<input type="email" class="form-control" id="inputEmail2" placeholder="Email" required>
+				<div class="help-block with-errors"></div>
+			 </div>
+			 <div class="form-group">
+			<label for="inputPassword2" class="control-label">密碼</label>
+			  <div class="form-group">
+				<input type="password" class="form-control" data-minlength="6"  maxlength="16" id="inputPassword2" placeholder="Password" required>
+				<div class="help-block">6~16字</div>
+			  </div>
+			<label for="inputPasswordConfirm" class="control-label">請再次輸入密碼</label>
+			  <div class="form-group">
+				<input type="password" class="form-control" id="inputPasswordConfirm"  maxlength="16" data-match="#inputPassword2" data-match-error="兩次輸入密碼不同" placeholder="Confirm" required>
+				<div class="help-block with-errors"></div>
+			  </div>
+			</div>
+            <button type="submit">註冊</button>
+            </form>
+            </div>
+        </div>
+    </div>
+    </div>
+               </div>
+            </div>
+         </div>
+      </div>
+	        <!-- login Modal end -->
+
+
+任何地方插入下列script:			
+			<script>
+		$(document).ready(function(){
+			$("a.Horizontalitem").click(function(event){
+				var item = this;
+				if(item.textContent=='Sign in')
+					$("#loginModal").modal();
+			});
+			
+		});
+	  </script>

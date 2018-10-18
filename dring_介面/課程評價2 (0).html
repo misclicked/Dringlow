@@ -1,0 +1,245 @@
+﻿<html>
+<head>
+      <meta charset="utf-8">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" charset="utf-8">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" charset="utf-8"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" charset="utf-8"></script>
+<style>
+
+.title {
+	margin: 0;
+    background: lightgrey;
+   // color: red;
+    border: 0;  
+    //text-align: center;
+}
+li:last-child {
+    border-right: none;
+}
+.Horizontalitem {
+	display: block;
+    color: white;
+    text-align: center;
+    padding: 10px 15px;
+    text-decoration: none;
+    
+}
+
+.Horizontalitem:hover:not(.active) {
+	background-color: green;
+
+}
+.active {
+	background-color: #4CAF50;
+}
+
+.Horizontalbar{
+	list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    
+    overflow: hidden;
+}
+.Horizontalborder {
+	float: left;
+    border-right:1px solid #bbb;
+}
+
+
+.Verticalbar {
+	list-style-type: none;
+	background-color: #f1f1f1;
+    width: 150px;
+    margin-top: 20px;
+    padding: 0;
+    position: fixed;
+    overflow: auto;
+    float: left;
+}
+
+.Verticalitem {
+	display: block;
+    color: #000;
+    padding: 8px 16px;
+    text-decoration: none;
+    text-align: center;
+}
+
+.Verticalitem:hover:not(.active) {
+	background-color: #555;
+    color: white;
+}
+
+.content {
+	//height: 600px;
+	width:75%;
+    background-color: lightblue;
+	padding: 6px;    
+	margin-left: 170px;
+	margin-top: 5px;
+    //overflow: auto;
+}
+
+		 .inpf {
+			height:100%;
+			 width:75%;
+			 background-color: lightblue;
+			 padding: 6px;    
+			 margin-left: 170px;
+			 margin-top: 5px;
+		 }
+.card {
+     background-color: white;
+     padding: 7px;
+     margin-top: 20px;
+     height: 100px;
+     overflow: hidden;
+}
+.dropdown-content a {
+ 	background-color: #f9f9f9; 
+    color: black;
+    padding: 8px 16px;
+    text-decoration: none;
+    display: none;
+    text-align: center;
+}
+
+a:hover, .dropdown:hover .dropbtn {
+    background-color: #555;
+    color: white;
+}
+
+
+.dropdown-content a:hover {
+background-color: #555 ;
+color: white;
+display: block;
+}
+
+
+.dropdown:hover .dropdown-content a{
+    display: block;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.sellbutton {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+   }
+   h1, h2 {
+    display: inline-block;
+}
+</style>
+</head>
+<body>
+<h1 class="title">課程 - DringLow</h1>
+<ul class="Horizontalbar">
+	 <li class="Horizontalborder"><a class="Horizontalitem" href="">Home</a></li>
+ 	 <li class="Horizontalborder"><a class="active Horizontalitem" href="course">課程評價</a></li>
+ 	 <li class="Horizontalborder"><a class="Horizontalitem" href="book">二手書</a></li>
+     <li class="Horizontalborder"><a class="Horizontalitem" href="stuff">新舊物品</a></li>
+     <li class="Horizontalborder"><a class="Horizontalitem" href="gossip">聊天</a></li>
+     <li style="float:right;border-left:1px solid #bbb"><a class="Horizontalitem" href="">Sign </a></li>
+     <li style="float:right;border-left:1px solid #bbb " ><a class="Horizontalitem" href="login.do">Sign in</a>	</li>
+</ul>
+
+<ul class="Verticalbar">
+<li ><a class="Verticalitem" href="course?tag=999">全部</a></li>
+<li class="dropdown"><a class="Verticalitem dropbtn" href="javascript:void(0)">電機資訊學院</a>
+ <div class="dropdown-content">
+      <a href="course?tag=0">資訊工程學系</a>
+      <a href="course?tag=1">電機資訊學系</a>
+      <a href="course?tag=2">通訊系</a>
+      <a style="background-color:#f9f9f9"> </a>
+    </div></li>
+<li class="dropdown"><a class="Verticalitem dropbtn" href="javascript:void(0)">法律學院</a>
+ <div class="dropdown-content">
+      <a href="course?tag=3">法律系司法組</a>
+      <a href="course?tag=4">法律系</a>
+      <a href="course?tag=5">法律系</a>
+      <a style="background-color:#f9f9f9"> </a>
+    </div></li>
+<li class="dropdown"><a class="Verticalitem dropbtn" href="javascript:void(0)">商學院</a>
+ <div class="dropdown-content">
+      <a href="course?tag=6">企業管理學系</a>
+      <a href="course?tag=7">金融與合作經營學系</a>
+      <a href="course?tag=8">休閒運動管理學系</a>
+      <a href="course?tag=9">會計學系</a>
+      <a href="course?tag=10">統計系</a>
+      <a style="background-color:#f9f9f9"> </a>
+    </div></li>   
+<li class="dropdown"><a class="Verticalitem dropbtn" href="javascript:void(0)">公共事務學院</a>
+ <div class="dropdown-content">
+      <a href="course?tag=11">公共行政暨政策學系</a>
+      <a href="course?tag=12">財政學系</a>
+      <a href="course?tag=13">不動產與城鄉環境學系</a>
+      <a style="background-color:#f9f9f9"> </a>
+    </div></li>   
+
+<li class="dropdown"><a class="Verticalitem dropbtn" href="javascript:void(0)">人文學院</a>
+ <div class="dropdown-content">
+      <a href="course?tag=14">中國文學系</a>
+      <a href="course?tag=15">應用外語學系</a>
+      <a href="course?tag=16">歷史學系</a>
+      <a style="background-color:#f9f9f9"> </a>
+    </div></li>   
+</ul >
+<div class="row">
+  <div class="content" >
+	<div class="card" id = "1">
+	<h1>軟體工程 <span class="label label-default">代誌華</span></h1>  
+  <button type="button" class="btn btn-danger pull-right" style="top:30%;position:relative;"> 老師<span class="badge">5</span></button>  
+  <button type="button" class="btn btn-success pull-right" style="top:30%;position:relative;">豐富度 <span class="badge">3</span></button>   
+  <button type="button" class="btn btn-primary pull-right" style="top:30%;position:relative;" >甜度 <span class="badge">7</span></button> 
+	</div>
+	<div class="card" id = "1">
+	<h1>計算機組織 <span class="label label-default">XX老師</span></h1>  
+  <button type="button" class="btn btn-danger pull-right" style="top:30%;position:relative;">平均分數 <span class="badge">5</span></button>  
+  <button type="button" class="btn btn-success pull-right" style="top:30%;position:relative;">豐富度 <span class="badge">3</span></button>   
+  <button type="button" class="btn btn-primary pull-right" style="top:30%;position:relative;" >甜度 <span class="badge">7</span></button> 
+	</div>
+	<div class="card" id = "1">
+	<h1>嵌入式系統 <span class="label label-default">XX老師</span></h1>  
+  <button type="button" class="btn btn-danger pull-right" style="top:30%;position:relative;">平均分數 <span class="badge">5</span></button>  
+  <button type="button" class="btn btn-success pull-right" style="top:30%;position:relative;">豐富度 <span class="badge">3</span></button>   
+  <button type="button" class="btn btn-primary pull-right" style="top:30%;position:relative;" >甜度 <span class="badge">7</span></button> 
+	</div>
+    
+</div>
+</div>
+
+      <script>
+	  
+         $(function() {
+           $(".card").click(function() { 
+				gotoID(this.id);
+           });
+         });
+         function gotoID(id){
+         	var url = new URL(window.location.href);
+         	url.searchParams.set("id",id);
+			window.location.href = url.href;
+			//window.location.href = "課程評價2 (1).html";
+         }
+		 
+           $(".card").click(function() { 
+
+				gotoID(this.id);
+           });
+      </script>
+
+</body>
+</html>

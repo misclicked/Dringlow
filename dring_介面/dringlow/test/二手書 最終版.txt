@@ -1,0 +1,596 @@
+<html>
+   <head>
+      <meta charset="utf-8">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" charset="utf-8">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" charset="utf-8"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" charset="utf-8"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.5/validator.min.js" charset="utf-8"></script>
+      <style>
+         .title {
+         margin: 0;
+         background: lightgrey;
+         border: 0;  
+         }
+         li:last-child {
+         border-right: none;
+         }
+         .Horizontalitem {
+         display: block;
+         color: white;
+         text-align: center;
+         padding: 10px 15px;
+         text-decoration: none;
+         }
+         .Horizontalitem:hover:not(.active) {
+         background-color: green;
+         }
+         .active.Horizontalitem {
+         background-color: #4CAF50;
+         }
+         .Horizontalbar{
+         list-style-type: none;
+         margin: 0;
+         padding: 0;
+         background-color: black;
+         overflow: hidden;
+         }
+         .Horizontalborder {
+         float: left;
+         border-right:1px solid #bbb;
+         }
+         .Verticalbar {
+         list-style-type: none;
+         background-color: #f1f1f1;
+         width: 150px;
+         margin-top: 20px;
+         padding: 0;
+         position: fixed;
+         overflow: auto;
+         float: left;
+         }
+         .Verticalitem {
+         display: block;
+         color: #000;
+         padding: 8px 16px;
+         text-decoration: none;
+         text-align: center;
+         }
+         .Verticalitem:hover:not(.active) {
+         background-color: #555;
+         color: white;
+         }
+         .dropdown-content a {
+         background-color: #f9f9f9; 
+         color: black;
+         padding: 8px 16px;
+         text-decoration: none;
+         display: none;
+         text-align: center;
+         }
+         a:hover, .dropdown:hover .dropbtn {
+         background-color: #555;
+         color: white;
+         }
+         .dropdown-content a:hover {
+         background-color: #555 ;
+         color: white;
+         display: block;
+         }
+         .dropdown:hover .dropdown-content a{
+         display: block;
+         }
+         .row:after {
+         content: "";
+         display: table;
+         clear: both;
+         }
+         .content {
+         width:75%;
+         background-color: lightblue;
+         padding: 6px;    
+		 margin-left: 170px;
+		 margin-top: 5px;
+         //overflow: scroll;
+         }
+		 .inpf {
+			height:100%;
+			 width:75%;
+			 background-color: lightblue;
+			 padding: 6px;    
+			 margin-left: 170px;
+			 margin-top: 5px;
+		 }
+         .card {
+         background-color: white;
+         padding: 7px;
+         margin-top: 20px;
+         height: 190px;
+         width: 90%-1;
+         overflow: hidden;
+         }
+         .cardtext {
+         background-color: lightblue;
+         overflow: hidden;
+         height: 90px;
+         }
+         .fakeimg {
+         background-color: #aaa;
+         width: 150px;
+         padding: 20px;
+         float: left;
+         height: 150px;
+         }
+         .price {
+         background-color: lightgreen;
+         height: 20px;
+         width: 70px;
+         margin-top: 0px;
+         margin-right: 0%;
+         float: left;
+         overflow: auto;
+         text-align: right;
+         }
+         .seller {
+         background-color: lightgreen;
+         overflow: auto;
+         }
+         .sellbutton {
+         background-color: #4CAF50;
+         border: none;
+         color: white;
+         padding: 15px 32px;
+         text-align: center;
+         text-decoration: none;
+         display: inline-block;
+         font-size: 16px;
+         margin: 2px 2px;
+         cursor: pointer;
+         }.form-body{
+    background:#fff;
+    padding:20px;
+}
+.login-form{
+    background:rgba(255,255,255,0.8);
+	padding:20px;
+	border-top:3px solid#3e4043;
+}
+.innter-form{
+	padding-top:20px;
+}
+.final-login li{
+	width:50%;
+}
+
+.nav-tabs {
+    border-bottom: none !important;
+}
+
+.nav-tabs>li{
+	color:#222 !important;
+}
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:hover, .nav-tabs>li.active>a:focus {
+    color: #fff;
+    background-color: #d14d42;
+    border: none !important;
+    border-bottom-color: transparent;
+	border-radius:none !important;
+}
+.nav-tabs>li>a {
+    margin-right: 2px;
+    line-height: 1.428571429;
+    border: none !important;
+    border-radius:none !important;
+	text-transform:uppercase;
+	font-size:16px;
+}
+
+.social-login{
+	text-align:center;
+	font-size:12px;
+}
+.social-login p{
+	margin:15px 0;
+}
+.social-login ul{
+	margin:0;
+	padding:0;
+	list-style-type:none;
+}
+.social-login ul li{
+	width:33%;
+	float:left;
+    clear:fix;
+}
+.social-login ul li a{
+	font-size:13px;
+	color:#fff;
+	text-decoration:none;
+	padding:10px 0;
+	display:block;
+}
+.social-login ul li:nth-child(1) a{
+	background:#3b5998;
+}
+.social-login ul li:nth-child(2) a{
+	background:#e74c3d;
+}
+.social-login ul li:nth-child(3) a{
+	background:#3698d9;
+}
+.sa-innate-form input[type=text], input[type=password], input[type=file], textarea, select, email{
+    font-size:13px;
+	padding:10px;
+	border:1px solid#ccc;
+	outline:none;
+	width:100%;
+	margin:8px 0;
+	
+}
+.sa-innate-form input[type=submit]{
+    border:1px solid#e64b3b;
+	background:#e64b3b;
+	color:#fff;
+	padding:10px 25px;
+	font-size:14px;
+	margin-top:5px;
+	}
+	.sa-innate-form input[type=submit]:hover{
+	border:1px solid#db3b2b;
+	background:#db3b2b;
+	color:#fff;
+	}
+	
+	.sa-innate-form button{
+	border:1px solid#e64b3b;
+	background:#e64b3b;
+	color:#fff;
+	padding:10px 25px;
+	font-size:14px;
+	margin-top:5px;
+	}
+	.sa-innate-form button:hover{
+	border:1px solid#db3b2b;
+	background:#db3b2b;
+	color:#fff;
+	}
+    .sa-innate-form p{
+        font-size:13px;
+        padding-top:10px;
+    }
+		
+      </style>
+   </head>
+   <body>
+      <h1 class="title">DringLow</h1>
+      <ul class="Horizontalbar">
+         <li class="Horizontalborder"><a class="Horizontalitem" href="course\">Home</a></li>
+         <li class="Horizontalborder"><a class="Horizontalitem" href="book\">課程評價</a></li>
+         <li class="Horizontalborder"><a class="active Horizontalitem" href="book\">二手書</a></li>
+         <li class="Horizontalborder"><a class="Horizontalitem" href="stuff\">新舊物品</a></li>
+         <li class="Horizontalborder"><a class="Horizontalitem" href="gossip\">聊天</a></li>
+         <li style="float:right;border-left:1px solid #bbb"><a class="Horizontalitem" href="logout.do\">Sign out</a>	</li>
+         <li style="float:right;border-left:1px solid #bbb " ><a class="Horizontalitem">Sign in</a>	</li>
+      </ul>
+      <ul class="Verticalbar">
+         <li ><a class="Verticalitem" href="#home">搜尋</a></li>
+         <li class="dropdown">
+            <a class="Verticalitem dropbtn" href="javascript:void(0)">電機資訊學院</a>
+            <div class="dropdown-content">
+               <a href="course?tag=0">資訊工程學系</a>
+               <a href="course?tag=1">電機資訊學系</a>
+               <a href="course?tag=2">通訊系</a>
+               <a style="background-color:#f9f9f9"> </a>
+            </div>
+         </li>
+         <li class="dropdown">
+            <a class="Verticalitem dropbtn" href="javascript:void(0)">法律學院</a>
+            <div class="dropdown-content">
+               <a href="course?tag=3">法律系司法組</a>
+               <a href="course?tag=4">法律系法學組</a>
+               <a href="course?tag=5">法律系財經法組</a>
+               <a style="background-color:#f9f9f9"> </a>
+            </div>
+         </li>
+         <li class="dropdown">
+            <a class="Verticalitem dropbtn" href="javascript:void(0)">商學院</a>
+            <div class="dropdown-content">
+               <a href="course?tag=6">企業管理學系</a>
+               <a href="course?tag=7">金融與合作經營學系</a>
+               <a href="course?tag=8">休閒運動管理學系</a>
+               <a href="course?tag=9">會計學系</a>
+               <a href="course?tag=10">統計系</a>
+               <a style="background-color:#f9f9f9"> </a>
+            </div>
+         </li>
+         <li class="dropdown">
+            <a class="Verticalitem dropbtn" href="javascript:void(0)">公共事務學院</a>
+            <div class="dropdown-content">
+               <a href="course?tag=11">公共行政暨政策學系</a>
+               <a href="course?tag=12">財政學系</a>
+               <a href="course?tag=13">不動產與城鄉環境學系</a>
+               <a style="background-color:#f9f9f9"> </a>
+            </div>
+         </li>
+         <li class="dropdown">
+            <a class="Verticalitem dropbtn" href="javascript:void(0)">人文學院</a>
+            <div class="dropdown-content">
+               <a href="course?tag=14">中國文學系</a>
+               <a href="course?tag=15">應用外語學系</a>
+               <a href="course?tag=16">歷史學系</a>
+               <a style="background-color:#f9f9f9"> </a>
+            </div>
+         </li>
+      </ul >
+      <a href="#" class="sellbutton" id="sellbtn" data-toggle="modal" data-target="#myModal"  style="position:fixed; top:90%; left:90%;">拍賣</a>
+      <a href="#" class="sellbutton" id="backbtn" style="position:fixed; top:90%; left:90%;">回前頁</a>
+      <!-- Modal -->
+      <div class="modal fade" id="myModal" role="dialog">
+         <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+               <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h4 class="modal-title" id="curtitle">Modal Header</h4>
+               </div>
+               <div class="modal-body">
+                  <form action="/action_page.php" id="mySubForm">
+				  <div class="form-group">
+					  <label for="bookname">書名:</label>
+					  <input type="text" class="form-control" id="coursename" name="bookname" placeholder="書名">
+					</div>
+                     <div class="form-group">
+                        <label for="price">價錢:</label>
+                        <input type="text" class="form-control" id="price" name="teachername" placeholder="價錢">
+                     </div>
+                     <div class="form-group">
+                        <h4>圖片1:</h4>
+                        <div class="input-group">
+                           <label class="input-group-btn">
+                           <span class="btn btn-primary">
+                           瀏覽檔案&hellip; <input type="file"  name="pic1" value="" style="display: none;">
+                           </span>
+                           </label>
+                           <input type="text" class="form-control" readonly>
+                        </div>
+                     </div>
+                     <div class="form-group">
+                        <h4>圖片2:</h4>
+                        <div class="input-group">
+                           <label class="input-group-btn">
+                           <span class="btn btn-primary">
+                           瀏覽檔案&hellip; <input type="file"  name="pic2" value="" style="display: none;">
+                           </span>
+                           </label>
+                           <input type="text" class="form-control" readonly>
+                        </div>
+                     </div>
+                     <div class="form-group">
+                        <h4>圖片3:</h4>
+                        <div class="input-group">
+                           <label class="input-group-btn">
+                           <span class="btn btn-primary">
+                           瀏覽檔案&hellip; <input type="file"  name="pic3" value="" style="display: none;">
+                           </span>
+                           </label>
+                           <input type="text" class="form-control" readonly>
+                        </div>
+                     </div>
+				  <label for="comment">評論:</label>
+				  <textarea class="form-control" name="comment" rows="5" id="comment"></textarea>
+				  <p id="passwordHelpBlock" class="form-text text-muted">
+					  請輸入10~120字(不包含空格)
+					</p><br>
+                     <input class="btn btn-info btn-lg  center-block"  onClick="check()" style="width:100%" type="submit" value="Submit">
+                  </form>
+               </div>
+               <div class="modal-footer">
+                  <button type="button" class="btn btn-default "  data-dismiss="modal">Close</button>
+               </div>
+            </div>
+         </div>
+      </div>
+	        <!-- Modal end -->
+			
+    	        <!-- login Modal -->
+      <div class="modal fade" id="loginModal" role="dialog">
+         <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+               <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h4 class="modal-title" id="curtitle">登入</h4>
+               </div>
+               <div class="modal-body">
+			<div class="form-body">
+    <ul class="nav nav-tabs final-login">
+        <li class="active"><a data-toggle="tab" href="#sectionA">登入</a></li>
+        <li><a data-toggle="tab" href="#sectionB">註冊</a></li>
+    </ul>
+    <div class="tab-content">
+        <div id="sectionA" class="tab-pane fade in active">
+        <div class="innter-form">
+            <form class="sa-innate-form" method="post" id="loginform" data-toggle="validator" role="form">
+			<div class="form-group">
+				<label for="inputEmail" class="control-label">Email</label>
+				<input type="email" class="form-control" id="inputEmail" placeholder="Email" required>
+				<div class="help-block with-errors"></div>
+			 </div>
+			 <div class="form-group">
+			<label for="inputPassword" class="control-label">密碼</label>
+			  <div class="form-group">
+				<input type="password" class="form-control" data-minlength="6"  maxlength="16" id="inputPassword" placeholder="Password" required>
+				<div class="help-block"></div>
+			  </div>
+			</div>
+            <button type="submit">登入</button>
+            </form>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <div id="sectionB" class="tab-pane fade">
+        <div class="innter-form">
+            <form class="sa-innate-form" method="post" id="signinform" data-toggle="validator" role="form">
+			<div class="form-group">
+				<label for="inputEmail2" class="control-label">Email</label>
+				<input type="email" class="form-control" id="inputEmail2" placeholder="Email" required>
+				<div class="help-block with-errors"></div>
+			 </div>
+			 <div class="form-group">
+			<label for="inputPassword2" class="control-label">密碼</label>
+			  <div class="form-group">
+				<input type="password" class="form-control" data-minlength="6"  maxlength="16" id="inputPassword2" placeholder="Password" required>
+				<div class="help-block">6~16字</div>
+			  </div>
+			<label for="inputPasswordConfirm" class="control-label">請再次輸入密碼</label>
+			  <div class="form-group">
+				<input type="password" class="form-control" id="inputPasswordConfirm"  maxlength="16" data-match="#inputPassword2" data-match-error="兩次輸入密碼不同" placeholder="Confirm" required>
+				<div class="help-block with-errors"></div>
+			  </div>
+			</div>
+            <button type="submit">註冊</button>
+            </form>
+            </div>
+        </div>
+    </div>
+    </div>
+               </div>
+            </div>
+         </div>
+      </div>
+	        <!-- login Modal end -->
+      <div class="row">
+         <div class="content">
+            <div class="card btn"  style="text-align:left; padding-left:6px ;width:100%" id='1'>
+               <div class="fakeimg" style="margin-right:20px;">Image</div>
+               <h2  style="margin-top:0px;">#書籍名稱</h2>
+               <ul style="list-style-type: none;">
+                  <li>
+<h1 style="display: inline-block ; margin-top:2px">XXX</h1><span class="label label-default">賣家</span>
+<h1 style="color: red; margin-top:2px">$100</h1>  
+                  </li>
+               </ul>
+            </div>
+            <div style="overflow:auto"></div>
+            <div class="card btn"  style="text-align:left; padding-left:6px ;width:100%" id='2'>
+               <div class="fakeimg" style="margin-right:20px;">Image</div>
+               <h2  style="margin-top:0px;">#書籍名稱</h2>
+               <ul style="list-style-type: none;">
+                  <li>
+<h1 style="display: inline-block ; margin-top:2px">XXX</h1><span class="label label-default">賣家</span>
+<h1 style="color: red; margin-top:2px">$100</h1>  
+                  </li>
+               </ul>
+               <div style="overflow:auto;"></div>
+            </div>
+            <div class="card btn"  style="text-align:left; padding-left:6px ;width:100%" id='3'>
+               <div class="fakeimg" style="margin-right:20px;">Image</div>
+               <h2 style="margin-top:0px;">#書籍名稱</h2>
+               <ul style="list-style-type: none;">
+                  <li>
+<h1 style="display: inline-block ; margin-top:2px">XXX</h1><span class="label label-default">賣家</span>
+<h1 style="color: red; margin-top:2px">$100</h1>  
+                  </li>
+               </ul>
+            </div>
+         </div>
+      </div>
+	  	
+			<script>
+		$(document).ready(function(){
+			$("a.Horizontalitem").click(function(event){
+				var item = this;
+				if(item.textContent=='Sign in')
+					$("#loginModal").modal();
+			});
+			
+		});
+	  </script>
+      <script>
+		 var inPageFrame;
+		 var content;
+		 var sbtn;
+		 var bbtn;
+		 (function(){
+			content = $(".content")[0];
+			sbtn = $('#sellbtn')[0];
+			bbtn = $('#backbtn')[0];
+			inPageFrame=document.createElement('iframe');
+			inPageFrame.className='inpf';
+			inPageFrame.style.border='none';
+			inPageFrame.style.display='none';
+			inPageFrame.style.border='2px solid grey';
+			bbtn.style.display='none';
+			$(".row")[0].appendChild(inPageFrame);
+		 })();
+         function getTag(){
+         	var url = new URL(window.location.href);
+         	return c = url.searchParams.get("tag");
+         }
+		 
+		 $('#mySubForm').submit(function(event){
+			var ta = $("textarea")[0];
+			var myString = ta.value;
+var withoutSpace = myString.replace(/ /g,"");
+var length = withoutSpace.length;
+			if(length>120)
+				alert("字數多於120字");
+			else if(length<10)
+				alert("字數少於10字");
+			else{
+				$("#myModal").modal('toggle');
+				return;
+				}
+			event.preventDefault();
+		 });
+         function gotoID(id){
+			var s = window.location.href.split('course');
+         	var url = new URL(s[0]+"course/in");
+         	url.searchParams.set("id",id);
+			//inPageFrame.src=url;
+			inPageFrame.src="\二手書買賣-點進去的彈跳視窗.html";
+			content.style.display="none";
+			sbtn.style.display="none";
+			inPageFrame.style.display='block';
+			bbtn.style.display='block';
+         }
+		 
+         $(function() {
+           $('#backbtn').click(function (event) {
+			content.style.display="block";
+			sbtn.style.display="block";
+			inPageFrame.style.display='none';
+			bbtn.style.display='none';
+             });
+           $('#sellbtn').click(function (event) {
+                $('#curtitle')[0].textContent=getTag();
+             });
+           $(document).on('change', ':file', function() {
+             var input = $(this),
+                 numFiles = input.get(0).files ? input.get(0).files.length : 1,
+                 label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
+             input.trigger('fileselect', [numFiles, label]);
+           });
+         
+           $(document).ready( function() {
+               $(':file').on('fileselect', function(event, numFiles, label) {
+         
+                   var input = $(this).parents('.input-group').find(':text'),
+                       log = numFiles > 1 ? numFiles + ' files selected' : label;
+         
+                   if( input.length ) {
+                       input.val(log);
+                   } else {
+                       if( log ) alert(log);
+                   }
+         
+               });
+           });
+           
+           $(".card").click(function() { 
+				gotoID(this.id);
+           });
+           
+         });
+      </script>
+   </body>
+</html>

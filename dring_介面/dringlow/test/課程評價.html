@@ -1,0 +1,232 @@
+ï»¿<html>
+<head>
+
+<style>
+
+.title {
+	margin: 0;
+    background: lightgrey;
+   // color: red;
+    border: 0;  
+    //text-align: center;
+}
+li:last-child {
+    border-right: none;
+}
+.Horizontalitem {
+	display: block;
+    color: white;
+    text-align: center;
+    padding: 10px 15px;
+    text-decoration: none;
+    
+}
+
+.Horizontalitem:hover:not(.active) {
+	background-color: green;
+
+}
+.active {
+	background-color: #4CAF50;
+}
+
+.Horizontalbar{
+	list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    
+    overflow: hidden;
+}
+.Horizontalborder {
+	float: left;
+    border-right:1px solid #bbb;
+}
+
+
+.Verticalbar {
+	list-style-type: none;
+	background-color: #f1f1f1;
+    width: 150px;
+    margin-top: 20px;
+    padding: 0;
+    position: fixed;
+    overflow: auto;
+    float: left;
+}
+
+.Verticalitem {
+	display: block;
+    color: #000;
+    padding: 8px 16px;
+    text-decoration: none;
+    text-align: center;
+}
+
+.Verticalitem:hover:not(.active) {
+	background-color: #555;
+    color: white;
+}
+
+.content {
+	//height: 600px;
+	//width:75%;
+    background-color: lightblue;
+	padding: 6px;    
+    //overflow: auto;
+}
+.card {
+     background-color: white;
+     padding: 7px;
+     margin-top: 20px;
+     height: 157px;
+     overflow: hidden;
+}
+.dropdown-content a {
+ 	background-color: #f9f9f9; 
+    color: black;
+    padding: 8px 16px;
+    text-decoration: none;
+    display: none;
+    text-align: center;
+}
+
+a:hover, .dropdown:hover .dropbtn {
+    background-color: #555;
+    color: white;
+}
+
+
+.dropdown-content a:hover {
+background-color: #555 ;
+color: white;
+display: block;
+}
+
+
+.dropdown:hover .dropdown-content a{
+    display: block;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.sellbutton {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    
+</style>
+</head>
+<body>
+<h1 class="title">DringLow</h1>
+<ul class="Horizontalbar">
+	 <li class="Horizontalborder"><a class="Horizontalitem" href="#home">Home</a></li>
+ 	 <li class="Horizontalborder"><a class="active Horizontalitem" href="#news">½Òµ{µû»ù</a></li>
+ 	 <li class="Horizontalborder"><a class="Horizontalitem" href="#contact">¤G¤â®Ñ</a></li>
+     <li class="Horizontalborder"><a class="Horizontalitem" href="#contact">·sÂÂª««~</a></li>
+     <li class="Horizontalborder"><a class="Horizontalitem" href="#contact">²á¤Ñ</a></li>
+     <li style="float:right;border-left:1px solid #bbb"><a class="Horizontalitem" href="#about ">About</a>	</li>
+     <li style="float:right;border-left:1px solid #bbb " ><a class="Horizontalitem" href="#about">Sign in</a>	</li>
+</ul>
+
+<ul class="Verticalbar">
+<li ><a class="Verticalitem" href="#home">·j´M</a></li>
+<li class="dropdown"><a class="Verticalitem dropbtn" href="javascript:void(0)">¹q¾÷¸ê°T¾Ç°|</a>
+ <div class="dropdown-content">
+      <a href="#">¸ê°T¤uµ{¾Ç¨t</a>
+      <a href="#">¹q¾÷¸ê°T¾Ç¨t</a>
+      <a href="#">³q°T¨t</a>
+      <a style="background-color:#f9f9f9"> </a>
+    </div></li>
+<li class="dropdown"><a class="Verticalitem dropbtn" href="javascript:void(0)">ªk«ß¾Ç°|</a>
+ <div class="dropdown-content">
+      <a href="#">ªk«ß¨t¥qªk²Õ</a>
+      <a href="#">ªk«ß¨t</a>
+      <a href="#">ªk«ß¨t</a>
+      <a style="background-color:#f9f9f9"> </a>
+    </div></li>
+<li class="dropdown"><a class="Verticalitem dropbtn" href="javascript:void(0)">°Ó¾Ç°|</a>
+ <div class="dropdown-content">
+      <a href="#">¥ø·~ºÞ²z¾Ç¨t</a>
+      <a href="#">ª÷¿Ä»P¦X§@¸gÀç¾Ç¨t</a>
+      <a href="#">¥ð¶¢¹B°ÊºÞ²z¾Ç¨t</a>
+      <a href="#">·|­p¾Ç¨t</a>
+      <a href="#">²Î­p¨t</a>
+      <a style="background-color:#f9f9f9"> </a>
+    </div></li>   
+<li class="dropdown"><a class="Verticalitem dropbtn" href="javascript:void(0)">¤½¦@¨Æ°È¾Ç°|</a>
+ <div class="dropdown-content">
+      <a href="#">¤½¦@¦æ¬Fº[¬Fµ¦¾Ç¨t</a>
+      <a href="#">°]¬F¾Ç¨t</a>
+      <a href="#">¤£°Ê²£»P«°¶mÀô¹Ò¾Ç¨t</a>
+      <a style="background-color:#f9f9f9"> </a>
+    </div></li>   
+
+<li class="dropdown"><a class="Verticalitem dropbtn" href="javascript:void(0)">¤H¤å¾Ç°|</a>
+ <div class="dropdown-content">
+      <a href="#">¤¤°ê¤å¾Ç¨t</a>
+      <a href="#">À³¥Î¥~»y¾Ç¨t</a>
+      <a href="#">¾ú¥v¾Ç¨t</a>
+      <a style="background-color:#f9f9f9"> </a>
+    </div></li>   
+</ul >
+
+<div class="row">
+  <div class="content" style="margin-left: 170px;margin-top: 5px;">
+  	<a href="#" class="sellbutton" style="width:5%;position:fixed; top:90%; left:82%;">µû½×</a>
+	<div class="card">
+  	<h2>#¸ê¤u¨t #³nÅé¤uµ{µû»ù</h2>
+ 	 <div>
+ 	 <div style="float:right;font-size:15px;">2018/1/1</div>
+  	 <div style="font-size:20px;">µû½×ªÌ¡GXXX</div>
+	 </div>
+     <div>
+ 	 <div style="float:left;font-size:15px;">²¢«×¡G5Áû¬P</div>
+  	 <div style="font-size:15px;margin-left:100px;">Â×´I«×¡G10¤À</div>
+	 </div>
+ 	 <p>§ÚÄ±±o³o¬O¤@ªù«Ü¦nªº½Òµ{¡A¦Ü©ó¬°¤°»ò¡A¨S¬°¤°»ò¡C</p>
+	</div>
+    
+    <div class="card">
+  	<h2>#¸ê¤u¨t #­pºâ¾÷²ÕÂ´µû»ù</h2>
+ 	 <div>
+     
+ 	 <div style="float:right;font-size:15px;">2018/1/1</div>
+  	 <div style="font-size:20px;">µû½×ªÌ:XXX</div>
+	 </div>
+     <div>
+ 	 <div style="float:left;font-size:15px;">²¢«×¡G5Áû¬P</div>
+  	 <div style="font-size:15px;margin-left:100px;">Â×´I«×¡G10¤À</div>
+	 </div>
+     
+ 	 <p>³o¸Ì¨ì©³¦³´X­Ó¦r°×°×³o¸Ì¨ì©³¦³´X­Ó¦r°×°×³o¸Ì¨ì©³¦³´X­Ó¦r°×°×³o¸Ì¨ì©³¦³´X­Ó¦r°×°×³o¸Ì¨ì©³¦³´X­Ó¦r°×°×³o¸Ì¨ì©³¦³´X­Ó¦r°×°×³o¸Ì¨ì©³¦³´X­Ó¦r°×°×³o¸Ì¨ì©³¦³´X­Ó¦r°×°×³o¸Ì¨ì©³¦³´X­Ó¦r°×°×³o¸Ì¨ì©³¦³´X­Ó¦r°×°×³o¸Ì¨ì©³¦³´X­Ó¦r°×°×³o¸Ì¨ì©³¦³´X­Ó¦r°×°×³o¸Ì¨ì©³¦³´X­Ó¦r°×°×³o¸Ì¨ì©³¦³´X­Ó¦r°×°×³o¸Ì¨ì©³¦³´X­Ó¦r°×°×³o¸Ì¨ì©³¦³´X­Ó¦r°×°×³o¸Ì¨ì©³¦³´X­Ó¦r°×°×³o¸Ì¨ì©³¦³´X­Ó¦r°×°×³o¸Ì¨ì©³¦³´X­Ó¦r°×°×³o¸Ì¨ì©³¦³´X­Ó¦r°×°×³o¸Ì¨ì©³¦³´X­Ó¦r°×°×</p>
+	</div>
+    
+    <div class="card">
+  	<h2>#¹q¾÷¨t ´O¤J¦¡¨t²Î</h2>
+ 	 <div>
+ 	 <div style="float:right;font-size:15px;">2018/1/1</div>
+  	 <div style="font-size:20px;">µû½×ªÌ:XXX</div>
+	 </div>
+    <div>
+ 	 <div style="float:left;font-size:15px;">²¢«×¡G5Áû¬P</div>
+  	 <div style="font-size:15px;margin-left:100px;">Â×´I«×¡G10¤À</div>
+	 </div>
+ 	 <p>§ÚÄ±±o³o¬O¤@ªù«Ü¦nªº½Òµ{¡A¦Ü©ó¬°¤°»ò¡A¨S¬°¤°»ò¡C</p>
+	</div>
+</div>
+</div>
+
+
+</body>
+</html>
